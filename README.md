@@ -1,23 +1,3 @@
----
-
-# CogVideoX + mT5-XXL Fine-Tuning
-
-This repository contains a training script to fine-tune **THUDM/CogVideoX-2B** with a **google/mt5-xxl** text encoder on your own video–text dataset.
-
-The script:
-
-* Trains **only**:
-
-  * cross-attention / attention layers of the CogVideoX transformer
-  * top-2 layers of mT5-XXL
-* Uses **bfloat16** mixed precision
-* Saves:
-
-  * rolling **latest** checkpoint
-  * multiple **best_step_XXXXX** checkpoints (by validation loss)
-  * a **FULL** export of the entire pipeline for inference: `CogVideoX-mT5XXL-full/`
-
----
 
 ## 1. Hardware & Requirements
 
@@ -368,3 +348,4 @@ video = pipe(prompt, num_frames=16).videos  # example, depends on diffusers vers
 
   
 ---
+
